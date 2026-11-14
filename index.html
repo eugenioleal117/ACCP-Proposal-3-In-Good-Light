@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="In Good Light, a design exhibition and website concept for ACCP Construction.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="logo-mask.png">
+<link rel="preload" href="inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+<title>In Good Light — ACCP Construction</title>
+</head>
+<body>
+<svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+ <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+ <symbol id="up" viewBox="0 0 24 24"><path d="M5 19 19 5M7 5h12v12"/></symbol>
+ <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/></symbol>
+ <symbol id="moon" viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 9 4a8.5 8.5 0 1 0 11 11.5Z"/></symbol>
+ <symbol id="close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+ <symbol id="arch" viewBox="0 0 24 24"><path d="M2 21h20m-17 0V10a7 7 0 0 1 14 0v11m-11 0V10a4 4 0 0 1 8 0v11"/></symbol>
+ <symbol id="join" viewBox="0 0 24 24"><path d="M3 3h7v7h4V3h7v18h-7v-7h-4v7H3z"/></symbol>
+ <symbol id="porch" viewBox="0 0 24 24"><path d="M2 10 12 3l10 7M5 10v10m14-10v10M2 20h20M10 15h4v5"/></symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+<header id="top" class="bar">
+  <a class="brand" href="#top" aria-label="ACCP Construction home"><span class="logo" aria-hidden="true"></span><span>ACCP <small>CONSTRUCTION</small></span></a>
+  <nav aria-label="Main navigation"><a href="#exhibition">Exhibition</a><a href="#studio">Brand studio</a><a href="#objects">Applications</a></nav>
+  <div class="bar-actions"><button class="icon-button" id="theme" aria-label="Switch to dark mode" type="button"><svg class="icon"><use href="#moon"/></svg></button><button type="button" class="outline quote-open">Project inquiry</button></div>
+</header>
+<main id="main">
+  <section class="hero" aria-label="In Good Light exhibition cover">
+    <img class="hero-image" id="hero-image" src="courtyard-cover.jpg" alt="Sunlight across a limestone courtyard and arcade" fetchpriority="high" width="1536" height="1024">
+    <div class="hero-type"><p class="label">ACCP Construction / Brand Proposal 03</p><h1>In Good Light</h1></div>
+    <div class="hero-index" role="group" aria-label="Cover views">
+      <button type="button" class="cover-button" data-view="0" aria-pressed="true" aria-label="Limestone courtyard"><img src="courtyard-cover.jpg" alt="" width="1536" height="1024"></button>
+      <button type="button" class="cover-button" data-view="1" aria-pressed="false" aria-label="The walnut room"><img src="walnut-room.jpg" alt="" width="764" height="508"></button>
+      <button type="button" class="cover-button" data-view="2" aria-pressed="false" aria-label="The Gulf pavilion"><img src="gulf-pavilion.jpg" alt="" width="764" height="508"></button>
+      <button type="button" class="cover-button" data-view="3" aria-pressed="false" aria-label="The limestone stair"><img src="limestone-stair.jpg" alt="" width="764" height="508"></button>
+    </div>
+  </section>
+  <div class="margin cover-caption"><p id="cover-caption" class="label" aria-live="polite">01 / Limestone courtyard</p><a class="label" href="#exhibition">View exhibition ↓</a></div>
+
+  <section class="margin exhibition" id="exhibition" aria-labelledby="exhibition-title">
+    <div class="wall-intro">
+      <h2 id="exhibition-title">Materials<br>make a place.</h2>
+      <p>Open courtyards, shaded porches and rooms that feel good to live in. Four architectural studies consider how ACCP could present custom homes, renovations and additions in Southwest Florida.</p>
+    </div>
+    <div class="rail-heading"><h3>Exhibition index</h3><p class="label">Illustrative architecture studies</p></div>
+    <div class="print-grid">
+      <article><button class="print" type="button" data-study="0" aria-label="Open study: The courtyard house"><img src="courtyard-study.jpg" alt="Sunlit courtyard with limestone arches and an olive tree" loading="lazy" width="764" height="508"><span class="print-caption"><span><span class="label">01 / Custom home</span><strong>The courtyard house</strong></span><svg class="icon"><use href="#up"/></svg></span></button></article>
+      <article><button class="print" type="button" data-study="1" aria-label="Open study: The walnut room"><img src="walnut-room.jpg" alt="Renovated room with sage cabinetry, walnut joinery and terracotta floors" loading="lazy" width="764" height="508"><span class="print-caption"><span><span class="label">02 / Renovation</span><strong>The walnut room</strong></span><svg class="icon"><use href="#up"/></svg></span></button></article>
+      <article><button class="print" type="button" data-study="2" aria-label="Open study: The Gulf pavilion"><img src="gulf-pavilion.jpg" alt="Coastal pavilion with blue tile and pale limestone" loading="lazy" width="764" height="508"><span class="print-caption"><span><span class="label">03 / Outdoor living</span><strong>The Gulf pavilion</strong></span><svg class="icon"><use href="#up"/></svg></span></button></article>
+      <article><button class="print" type="button" data-study="3" aria-label="Open study: The limestone stair"><img src="limestone-stair.jpg" alt="Limestone stair and walnut details in late afternoon sunlight" loading="lazy" width="764" height="508"><span class="print-caption"><span><span class="label">04 / Interior detail</span><strong>The limestone stair</strong></span><svg class="icon"><use href="#up"/></svg></span></button></article>
+    </div>
+  </section>
+
+  <figure class="material-photo"><img src="material-study.jpg" alt="Limestone, walnut, terracotta and sage ceramic samples arranged in sunlight" loading="lazy" width="764" height="508"><figcaption class="label margin">Material study / Limestone, walnut, fired clay and glazed ceramic</figcaption></figure>
+
+  <section class="margin studio" id="studio" aria-labelledby="studio-title">
+    <div class="wall-intro">
+      <h2 id="studio-title">Brand studio.</h2>
+      <p>ACCP’s skyline and wordmark carry through the collection. Walnut and linen frame the identity. Fired clay and olive come from the materials in the exhibition.</p>
+    </div>
+    <details open>
+      <summary><span>Logo editions</span></summary>
+      <div class="logo-grid">
+        <figure><div class="logo-stage"><img class="original" src="accp-original.jpg" width="200" height="200" loading="lazy" alt="Original blue ACCP Construction logo"></div><figcaption class="label">Original artwork</figcaption></figure>
+        <figure><div class="logo-stage"><span class="logo walnut" role="img" aria-label="Original logo in walnut brown"></span></div><figcaption class="label">Walnut ink</figcaption></figure>
+        <figure><div class="logo-stage inverse"><span class="logo linen" role="img" aria-label="Original logo in pale linen on walnut"></span></div><figcaption class="label">Linen reverse</figcaption></figure>
+        <figure><div class="logo-stage"><span class="logo clay" role="img" aria-label="Original logo in a terracotta to walnut gradient"></span></div><figcaption class="label">Fired clay gradient</figcaption></figure>
+      </div>
+    </details>
+    <details>
+      <summary><span>Color and materials</span></summary>
+      <ul class="swatches">
+        <li><span style="--sample:#f6f1eb"></span><strong>Linen Canvas</strong><small>#F6F1EB</small></li>
+        <li><span style="--sample:#403a34"></span><strong>Walnut Ink</strong><small>#403A34</small></li>
+        <li><span style="--sample:#333333"></span><strong>Charcoal Note</strong><small>#333333</small></li>
+        <li><span style="--sample:#555555"></span><strong>Slate Whisper</strong><small>#555555</small></li>
+        <li><span style="--sample:#a85a41"></span><strong>Fired Clay</strong><small>#A85A41</small></li>
+        <li><span style="--sample:#687259"></span><strong>Garden Olive</strong><small>#687259</small></li>
+      </ul>
+    </details>
+    <details>
+      <summary><span>Typography and icons</span></summary>
+      <div class="specimen"><div><p class="type-preview">Aa</p><p>Inter 400, 500 &amp; 700</p><p class="label">Display, body and gallery labels</p></div>
+      <ul class="icon-list"><li><svg class="icon" aria-hidden="true"><use href="#arch"/></svg>Architecture</li><li><svg class="icon" aria-hidden="true"><use href="#join"/></svg>Craft</li><li><svg class="icon" aria-hidden="true"><use href="#porch"/></svg>Outdoor living</li></ul></div>
+    </details>
+  </section>
+
+  <section class="margin objects" id="objects" aria-labelledby="objects-title">
+    <div class="rail-heading"><h2 id="objects-title">From paper to pavement.</h2><p class="label">Brand applications</p></div>
+    <div class="contact-sheet">
+      <figure class="truck"><div class="mock"><img src="linen-silverado.jpg" width="764" height="508" loading="lazy" alt="Linen Chevrolet Silverado against a terracotta wall with the ACCP mark on the front door"><span class="logo" aria-hidden="true"></span></div><figcaption><strong>Chevrolet Silverado</strong><span class="label">Walnut vinyl / linen paint</span></figcaption></figure>
+      <figure class="business-card"><div class="mock"><img src="stone-stationery.jpg" width="764" height="508" loading="lazy" alt="Cotton stock business cards on warm limestone with the ACCP mark"><span class="logo" aria-hidden="true"></span></div><figcaption><strong>Business card</strong><span class="label">Clay ink / cotton stock</span></figcaption></figure>
+      <figure class="shirt"><div class="mock"><img src="olive-uniform.jpg" width="764" height="508" loading="lazy" alt="Olive green polo with an embroidered linen ACCP mark"><span class="logo" aria-hidden="true"></span></div><figcaption><strong>Field polo</strong><span class="label">Linen thread / olive piqué</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="margin exit"><h2>Have a project<br>in mind?</h2><button type="button" class="filled quote-open">Preview a project inquiry <svg class="icon"><use href="#arrow"/></svg></button></section>
+</main>
+<footer class="margin footer"><p class="label">ACCP Construction / Brand Proposal 03</p><a href="#top" class="label">Back to top ↑</a></footer>
+
+<dialog id="study-dialog" aria-labelledby="study-title">
+  <div class="dialog-bar"><span class="label" id="study-type"></span><button class="icon-button" type="button" data-close aria-label="Close study"><svg class="icon"><use href="#close"/></svg></button></div>
+  <img id="study-image" width="764" height="508" alt="">
+  <div class="study-copy"><h2 id="study-title"></h2><p id="study-description"></p></div>
+  <div class="study-controls"><button type="button" class="outline" id="previous-study">Previous study</button><button type="button" class="outline" id="next-study">Next study</button></div>
+</dialog>
+<dialog id="quote-dialog" aria-labelledby="quote-title">
+  <div class="dialog-bar"><span class="label" id="quote-step">Step 1 of 2 / Project</span><button class="icon-button" type="button" data-close aria-label="Close project inquiry"><svg class="icon"><use href="#close"/></svg></button></div>
+  <div class="quote-body">
+    <h2 id="quote-title">Project inquiry</h2>
+    <p>Demonstration only. Your entries stay on this page.</p>
+    <form id="inquiry">
+      <fieldset id="project-fields">
+        <legend class="sr">Project details</legend>
+        <label>Project type<select required id="project-type"><option value="">Select a project type</option><option>Custom home</option><option>Renovation</option><option>Addition</option><option>Outdoor living</option><option>Commercial build-out</option><option>Other</option></select></label>
+        <label>Project ZIP code<input inputmode="numeric" pattern="[0-9]{5}" placeholder="33901" required></label>
+        <label>Estimated budget<select><option value="">Select a range</option><option>Under $100,000</option><option>$100,000–$249,999</option><option>$250,000–$499,999</option><option>$500,000 and up</option><option>Still deciding</option></select></label>
+        <label>Project details<textarea rows="3" placeholder="Tell us about your space and timeline."></textarea></label>
+      </fieldset>
+      <fieldset id="contact-fields" hidden disabled>
+        <legend class="sr">Contact information</legend>
+        <label>Full name<input autocomplete="name" placeholder="Jane Smith" required></label>
+        <label>Email<input type="email" autocomplete="email" placeholder="jane@example.com" required></label>
+        <label>Phone (optional)<input type="tel" autocomplete="tel" placeholder="(239) 555-0100"></label>
+      </fieldset>
+      <div class="form-actions"><button type="button" class="outline" id="quote-back" hidden>Back</button><button type="button" class="filled" id="quote-next">Continue</button></div>
+      <p role="status" id="quote-status" class="quote-status"></p>
+    </form>
+  </div>
+</dialog>
+</body>
+</html>
