@@ -7,8 +7,14 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="logo-mask.png">
 <link rel="preload" href="inter.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=iconography-20261117">
-<script src="app.js" defer></script>
+<script>
+  try {
+    const savedTheme = localStorage.getItem("accp-proposal-03-theme");
+    if (savedTheme === "night") document.documentElement.dataset.theme = savedTheme;
+  } catch {}
+</script>
+<link rel="stylesheet" href="styles.css?v=qa-20261117">
+<script src="app.js?v=qa-20261117" defer></script>
 <title>In Good Light — ACCP Construction</title>
 </head>
 <body>
@@ -31,12 +37,12 @@
   <symbol id="social-tiktok" viewBox="0 0 24 24"><path d="M13.1 5h2.4c.4 2.5 1.7 3.6 3.3 4.1v2.2a6 6 0 0 1-3.3-1.3v6.1a4.7 4.7 0 1 1-4.7-4.7h.7v2.2a2.5 2.5 0 1 0 1.6 2.4Z"/><path d="M7 21h10" class="icon-accent"/></symbol>
 </svg>
 <a class="skip" href="#main">Skip to content</a>
-<header id="top" class="bar">
+<header id="top" tabindex="-1" class="bar">
   <a class="brand" href="#top" aria-label="ACCP Construction home"><span class="logo" aria-hidden="true"></span><span>ACCP <small>CONSTRUCTION</small></span></a>
   <nav aria-label="Main navigation"><a href="#exhibition">Exhibition</a><a href="#studio">Brand studio</a><a href="#objects">Applications</a></nav>
   <div class="bar-actions"><button class="icon-button" id="theme" aria-label="Switch to dark mode" type="button"><svg class="icon"><use href="#moon"/></svg></button><button type="button" class="outline quote-open">Project inquiry</button></div>
 </header>
-<main id="main">
+<main id="main" tabindex="-1">
   <section class="hero" aria-label="In Good Light exhibition cover">
     <img class="hero-image" id="hero-image" src="courtyard-cover.jpg" alt="Sunlight across a limestone courtyard and arcade" fetchpriority="high" width="1536" height="1024">
     <div class="hero-type"><p class="label">ACCP Construction / Brand Proposal 03</p><h1>In Good Light</h1></div>
@@ -49,7 +55,7 @@
   </section>
   <div class="margin cover-caption"><p id="cover-caption" class="label" aria-live="polite">01 / Limestone courtyard</p><a class="label" href="#exhibition">View exhibition ↓</a></div>
 
-  <section class="margin exhibition" id="exhibition" aria-labelledby="exhibition-title">
+  <section class="margin exhibition" id="exhibition" tabindex="-1" aria-labelledby="exhibition-title">
     <div class="wall-intro">
       <h2 id="exhibition-title">Materials<br>make a place.</h2>
       <p>Open courtyards, shaded porches and rooms that feel good to live in. Four architectural studies consider how ACCP could present custom homes, renovations and additions in Southwest Florida.</p>
@@ -65,7 +71,7 @@
 
   <figure class="material-photo"><img src="material-study.jpg" alt="Limestone, walnut, terracotta and sage ceramic samples arranged in sunlight" loading="lazy" width="764" height="508"><figcaption class="label margin">Material study / Limestone, walnut, fired clay and glazed ceramic</figcaption></figure>
 
-  <section class="margin studio" id="studio" aria-labelledby="studio-title">
+  <section class="margin studio" id="studio" tabindex="-1" aria-labelledby="studio-title">
     <div class="wall-intro">
       <h2 id="studio-title">Brand studio.</h2>
       <p>ACCP’s skyline and wordmark carry through the collection. Walnut and linen frame the identity. Fired clay and olive come from the materials in the exhibition.</p>
@@ -117,7 +123,7 @@
     </details>
   </section>
 
-  <section class="margin objects" id="objects" aria-labelledby="objects-title">
+  <section class="margin objects" id="objects" tabindex="-1" aria-labelledby="objects-title">
     <div class="rail-heading"><h2 id="objects-title">From paper to pavement.</h2><p class="label">Brand applications</p></div>
     <div class="contact-sheet">
       <figure class="truck"><div class="mock"><img src="linen-silverado.jpg" width="764" height="508" loading="lazy" alt="Linen Chevrolet Silverado against a terracotta wall with the ACCP mark on the front door"><span class="logo" aria-hidden="true"></span></div><figcaption><strong>Chevrolet Silverado</strong><span class="label">Walnut vinyl / linen paint</span></figcaption></figure>
@@ -132,22 +138,23 @@
 
 <dialog id="study-dialog" aria-labelledby="study-title">
   <div class="dialog-bar"><span class="label" id="study-type"></span><button class="icon-button" type="button" data-close aria-label="Close study"><svg class="icon"><use href="#close"/></svg></button></div>
-  <img id="study-image" width="764" height="508" alt="">
+  <img id="study-image" src="courtyard-study.jpg" width="764" height="508" alt="" loading="lazy">
   <div class="study-copy"><h2 id="study-title"></h2><p id="study-description"></p></div>
   <div class="study-controls"><button type="button" class="outline" id="previous-study">Previous study</button><button type="button" class="outline" id="next-study">Next study</button></div>
+  <p class="sr" id="study-status" role="status"></p>
 </dialog>
-<dialog id="quote-dialog" aria-labelledby="quote-title">
-  <div class="dialog-bar"><span class="label" id="quote-step">Step 1 of 2 / Project</span><button class="icon-button" type="button" data-close aria-label="Close project inquiry"><svg class="icon"><use href="#close"/></svg></button></div>
+<dialog id="quote-dialog" aria-labelledby="quote-title" aria-describedby="quote-note">
+  <div class="dialog-bar"><span class="label" id="quote-step" role="status">Step 1 of 2 / Project</span><button class="icon-button" type="button" data-close aria-label="Close project inquiry"><svg class="icon"><use href="#close"/></svg></button></div>
   <div class="quote-body">
-    <h2 id="quote-title">Project inquiry</h2>
-    <p>Demonstration only. Your entries stay on this page.</p>
+    <h2 id="quote-title" tabindex="-1" autofocus>Project inquiry</h2>
+    <p id="quote-note">Demonstration only. No information is sent. Closing the form clears your entries.</p>
     <form id="inquiry">
       <fieldset id="project-fields">
         <legend class="sr">Project details</legend>
         <label>Project type<select required id="project-type"><option value="">Select a project type</option><option>Custom home</option><option>Renovation</option><option>Addition</option><option>Outdoor living</option><option>Commercial build-out</option><option>Other</option></select></label>
-        <label>Project ZIP code<input inputmode="numeric" pattern="[0-9]{5}" placeholder="33901" required></label>
-        <label>Estimated budget<select><option value="">Select a range</option><option>Under $100,000</option><option>$100,000–$249,999</option><option>$250,000–$499,999</option><option>$500,000 and up</option><option>Still deciding</option></select></label>
-        <label>Project details<textarea rows="3" placeholder="Tell us about your space and timeline."></textarea></label>
+        <label>Project ZIP code<input inputmode="numeric" pattern="[0-9]{5}" maxlength="5" title="Enter a 5-digit ZIP code" autocomplete="postal-code" placeholder="33901" required></label>
+        <label>Estimated budget (optional)<select><option value="">Select a range</option><option>Under $100,000</option><option>$100,000–$249,999</option><option>$250,000–$499,999</option><option>$500,000 and up</option><option>Still deciding</option></select></label>
+        <label>Project details (optional)<textarea> rows="3" placeholder="Tell us about your space and timeline."></textarea></label>
       </fieldset>
       <fieldset id="contact-fields" hidden disabled>
         <legend class="sr">Contact information</legend>
@@ -155,7 +162,7 @@
         <label>Email<input type="email" autocomplete="email" placeholder="jane@example.com" required></label>
         <label>Phone (optional)<input type="tel" autocomplete="tel" placeholder="(239) 555-0100"></label>
       </fieldset>
-      <div class="form-actions"><button type="button" class="outline" id="quote-back" hidden>Back</button><button type="button" class="filled" id="quote-next">Continue</button></div>
+      <div class="form-actions"><button type="button" class="outline" id="quote-back" hidden>Back</button><button type="submit" class="filled" id="quote-next">Continue</button></div>
       <p role="status" id="quote-status" class="quote-status"></p>
     </form>
   </div>

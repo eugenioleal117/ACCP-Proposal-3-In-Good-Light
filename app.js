@@ -61,7 +61,7 @@ coverButtons.forEach((button, index) => button.addEventListener("click", () => {
 
 const studyDialog = document.querySelector("#study-dialog");
 let activeStudy = 0;
-function setStudy(index) {
+function setStudy(index, announce = true) {
   activeStudy = (index + studies.length) % studies.length;
   const study = studies[activeStudy];
   const image = document.querySelector("#study-image");
@@ -70,16 +70,18 @@ function setStudy(index) {
   document.querySelector("#study-type").textContent = `0${activeStudy + 1} / ${study.type}`;
   document.querySelector("#study-title").textContent = study.title;
   document.querySelector("#study-description").textContent = study.description;
+  document.querySelector("#study-status").textContent = announce ? `Study ${activeStudy + 1} of ${studies.length}: ${study.title}` : "";
 }
 document.querySelectorAll("[data-study]").forEach((button) => button.addEventListener("click", () => {
-  setStudy(Number(button.dataset.study));
+  setStudy(Number(button.dataset.study), false);
   studyDialog.showModal();
 }));
 document.querySelector("#previous-study").addEventListener("click", () => setStudy(activeStudy - 1));
 document.querySelector("#next-study").addEventListener("click", () => setStudy(activeStudy + 1));
 studyDialog.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft") setStudy(activeStudy - 1);
-  if (event.key === "ArrowRight") setStudy(activeStudy + 1);
+  if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+  event.preventDefault();
+  setStudy(activeStudy + (event.key === "ArrowRight" ? 1 : -1));
 });
 
 const quoteDialog = document.querySelector("#quote-dialog");
@@ -98,26 +100,29 @@ function showStep(isContact, focus = true) {
   contact.hidden = contact.disabled = !isContact;
   back.hidden = !isContact;
   step.textContent = isContact ? "Step 2 of 2 / Contact" : "Step 1 of 2 / Project";
-  next.textContent = isContact ? "Preview inquiry" : "Continue";
+  next.textContent = isContact ? "Finish demo" : "Continue";
   status.textContent = "";
   if (focus) (isContact ? contact : project).querySelector("input, select").focus();
 }
 function advance(event) {
   event.preventDefault();
-  if (!inquiry.reportValidity()) return;
   if (!contactStep) {
     showStep(true);
     return;
   }
-  const type = document.querySelector("#project-type").value;
-  status.textContent = `Your ${type.toLowerCase()} inquiry is ready to preview. This demo sends no information.`;
+  status.textContent = "Demo complete. No information was sent.";
 }
 document.querySelectorAll(".quote-open").forEach((button) => button.addEventListener("click", () => {
+  inquiry.reset();
   showStep(false, false);
   quoteDialog.showModal();
 }));
 document.querySelectorAll("[data-close]").forEach((button) => button.addEventListener("click", () => button.closest("dialog").close()));
 back.addEventListener("click", () => showStep(false));
-next.addEventListener("click", advance);
+quoteDialog.addEventListener("close", () => {
+  if (quoteDialog.open) return;
+  inquiry.reset();
+  showStep(false, false);
+});
 inquiry.addEventListener("submit", advance);
 inquiry.addEventListener("input", () => { status.textContent = ""; });
